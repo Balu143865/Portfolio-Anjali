@@ -53,14 +53,14 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 relative z-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
         >
-          <motion.div variants={itemVariants} className="space-y-6">
+          <motion.div variants={itemVariants} className="order-1 lg:order-1 space-y-4 lg:space-y-6 text-center lg:text-left">
             <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 bg-primary-500/10 rounded-full border border-primary-500/20">
               <motion.span
                 animate={{ scale: [1, 1.2, 1] }}
@@ -70,15 +70,15 @@ const Hero = () => {
               <span className="text-primary-600 dark:text-primary-400 text-sm font-medium">Available for work</span>
             </motion.div>
             
-            <motion.p variants={itemVariants} className="text-primary-600 dark:text-primary-400 font-medium text-lg">
+            <motion.p variants={itemVariants} className="text-primary-600 dark:text-primary-400 font-medium text-base lg:text-lg">
               Hello, I'm
             </motion.p>
-            <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl font-display font-bold">
+            <motion.h1 variants={itemVariants} className="text-4xl md:text-5xl lg:text-7xl font-display font-bold">
               <span className="text-gray-800 dark:text-white">Anjali</span>{" "}
               <span className="bg-gradient-to-r from-primary-500 to-purple-500 bg-clip-text text-transparent">Ontipuli</span>
             </motion.h1>
             
-            <motion.h2 variants={itemVariants} className="text-2xl md:text-3xl font-semibold text-gray-600 dark:text-slate-300">
+            <motion.h2 variants={itemVariants} className="text-lg md:text-2xl lg:text-3xl font-semibold text-gray-600 dark:text-slate-300">
               {text}
               <motion.span
                 animate={{ opacity: [0, 1, 0] }}
@@ -89,17 +89,17 @@ const Hero = () => {
               </motion.span>
             </motion.h2>
             
-            <motion.p variants={itemVariants} className="text-lg text-gray-500 dark:text-slate-400 max-w-lg">
+            <motion.p variants={itemVariants} className="text-base lg:text-lg text-gray-500 dark:text-slate-400 max-w-lg">
               Aspiring Full Stack Developer passionate about building modern, scalable 
               web applications. Let's build something amazing together.
             </motion.p>
 
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
+            <motion.div variants={itemVariants} className="flex flex-wrap gap-3 lg:gap-4 justify-center lg:justify-start">
               <motion.button
                 onClick={() => scrollToSection('#projects')}
                 whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(59, 130, 246, 0.4)' }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 bg-gradient-to-r from-primary-500 to-purple-500 text-white font-semibold rounded-lg hover:opacity-90 transition-all"
+                className="px-6 lg:px-8 py-2 lg:py-3 bg-gradient-to-r from-primary-500 to-purple-500 text-white font-semibold rounded-lg hover:opacity-90 transition-all"
               >
                 View Projects
               </motion.button>
@@ -110,14 +110,14 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, borderColor: 'rgba(59, 130, 246, 0.5)' }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 border-2 border-primary-500 text-primary-400 font-semibold rounded-lg hover:bg-primary-500/10 transition-all flex items-center space-x-2"
+                className="px-6 lg:px-8 py-2 lg:py-3 border-2 border-primary-500 text-primary-400 font-semibold rounded-lg hover:bg-primary-500/10 transition-all flex items-center space-x-2"
               >
                 <DownloadIcon className="w-5 h-5" />
                 <span>Resume</span>
               </motion.a>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="flex space-x-4 pt-4">
+            <motion.div variants={itemVariants} className="flex space-x-4 pt-4 justify-center lg:justify-start">
               {[
                 { icon: GithubIcon, href: 'https://github.com/Anjali5636', label: 'GitHub', color: 'hover:text-gray-900 dark:hover:text-white' },
                 { icon: LinkedinIcon, href: 'https://linkedin.com/in/anjali-ontipuli-5aa2982ab', label: 'LinkedIn', color: 'hover:text-blue-600 dark:hover:text-blue-400' },
@@ -149,19 +149,19 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex justify-center"
+            className="flex justify-center order-2 lg:order-2"
           >
             <div className="relative">
               <motion.div
                 animate={{ 
                   boxShadow: [
-                    '0 0 60px rgba(59, 130, 246, 0.3)',
-                    '0 0 80px rgba(139, 92, 246, 0.3)',
-                    '0 0 60px rgba(59, 130, 246, 0.3)'
+                    '0 0 40px rgba(59, 130, 246, 0.3)',
+                    '0 0 60px rgba(139, 92, 246, 0.3)',
+                    '0 0 40px rgba(59, 130, 246, 0.3)'
                   ]
                 }}
                 transition={{ duration: 3, repeat: Infinity }}
-                className="w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-br from-primary-500 via-purple-500 to-pink-500 p-1"
+                className="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-primary-500 via-purple-500 to-pink-500 p-1"
               >
                 <div className="w-full h-full rounded-full bg-white dark:bg-slate-900 flex items-center justify-center overflow-hidden">
                   <motion.div
@@ -171,37 +171,37 @@ const Hero = () => {
                     <img
                       src="/profile2.jpeg"
                       alt="Profile"
-                      className="w-64 h-64 md:w-88 md:h-88 rounded-full object-cover"
+                      className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-88 lg:h-88 rounded-full object-cover"
                     />
                   </motion.div>
                 </div>
               </motion.div>
               
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.8, duration: 0.5 }}
-                className="absolute -top-2 -right-4 md:-right-8 px-4 py-2 bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 shadow-xl"
+                className="absolute -top-2 -right-2 sm:-right-4 md:-right-8 px-3 py-1 sm:px-4 sm:py-2 bg-white dark:bg-slate-800 rounded-lg sm:rounded-xl border border-gray-200 dark:border-slate-700 shadow-xl hidden sm:block"
               >
                 <motion.p 
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
-                  className="text-sm font-semibold text-gray-800 dark:text-white"
+                  className="text-xs sm:text-sm font-semibold text-gray-800 dark:text-white"
                 >
                   MERN Stack
                 </motion.p>
               </motion.div>
               
               <motion.div
-                initial={{ opacity: 0, x: 30 }}
+                initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1, duration: 0.5 }}
-                className="absolute -bottom-2 -left-4 md:-left-8 px-4 py-2 bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 shadow-xl"
+                className="absolute -bottom-2 -left-2 sm:-left-4 md:-left-8 px-3 py-1 sm:px-4 sm:py-2 bg-white dark:bg-slate-800 rounded-lg sm:rounded-xl border border-gray-200 dark:border-slate-700 shadow-xl hidden sm:block"
               >
                 <motion.p 
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-                  className="text-sm font-semibold text-gray-800 dark:text-white"
+                  className="text-xs sm:text-sm font-semibold text-gray-800 dark:text-white"
                 >
                   React
                 </motion.p>
@@ -211,7 +211,7 @@ const Hero = () => {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1.2 }}
-                className="absolute top-1/2 -left-4 md:-left-8 px-3 py-1 bg-green-500 rounded-full"
+                className="absolute top-1/2 -left-2 sm:-left-4 px-2 py-1 bg-green-500 rounded-full sm:hidden"
               >
                 <span className="text-xs font-medium text-white">Open to Work</span>
               </motion.div>

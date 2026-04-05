@@ -10,21 +10,53 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="py-20 bg-gray-50 dark:bg-slate-900">
+    <section id="education" className="py-16 lg:py-20 bg-gray-50 dark:bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 lg:mb-16"
         >
-          <h2 className="text-4xl font-display font-bold mb-4">
+          <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
             My <span className="text-primary-400">Education</span>
           </h2>
         </motion.div>
 
-        <div className="relative">
+        {/* Mobile: Simple vertical layout */}
+        <div className="lg:hidden space-y-4">
+          {education.map((edu, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: index * 0.15, duration: 0.4 }}
+              className="p-4 bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700"
+            >
+              <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center gap-2">
+                  <div className="p-1.5 bg-primary-500/20 rounded-lg">
+                    <AcademicCapIcon className="w-4 h-4 text-primary-400" />
+                  </div>
+                  <h3 className="text-base font-semibold text-gray-800 dark:text-white">
+                    {edu.title}
+                  </h3>
+                </div>
+                <span className="text-xs text-primary-400 bg-primary-500/20 px-2 py-1 rounded-full">
+                  {edu.period}
+                </span>
+              </div>
+              <p className="text-xs text-purple-500 dark:text-purple-400 font-medium mb-1">{edu.description}</p>
+              <p className="text-xs text-gray-600 dark:text-slate-400 mb-1">{edu.school}</p>
+              <p className="text-sm text-primary-500 dark:text-primary-400 font-bold">{edu.cgpa}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Desktop: Timeline layout */}
+        <div className="hidden lg:block relative">
           <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-primary-500 via-purple-500 to-pink-500" />
           
           <div className="space-y-12">
