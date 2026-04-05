@@ -36,7 +36,9 @@ const Navbar = () => {
   const scrollToSection = (href) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
     }
     setIsOpen(false);
   };
