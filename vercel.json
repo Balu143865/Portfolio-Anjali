@@ -1,9 +1,11 @@
 {
-  "buildCommand": "cd frontend && npm install && npm run build",
+  "build": {
+    "env": {
+      "REACT_APP_API_URL": ""
+    }
+  },
+  "buildCommand": "cd frontend && npm install --legacy-peer-deps && npm run build",
   "outputDirectory": "frontend/build",
   "framework": "create-react-app",
-  "installCommand": "cd frontend && npm install",
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
-  ]
+  "installCommand": "cd frontend && npm install --legacy-peer-deps"
 }
